@@ -32,3 +32,6 @@
 *.app
 
 ./KShips/.vs
+.vs/
+./KShips/Debug
+KShips/Debug/

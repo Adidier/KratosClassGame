@@ -15,7 +15,7 @@ void GameStateManager::ReleaseState()
 void GameStateManager::GameLoop()
 {
 	bool closeApp = false;
-	while (!closeApp)
+	while (!closeApp)//adidier arreglar la salida del juego
 	{
 		if (gamestates.size() == 0)
 		{
@@ -26,7 +26,7 @@ void GameStateManager::GameLoop()
 		plat->RenderClear();
 		gamestates.top()->Draw();
 		plat->RenderPresent();
-		SDL_Delay(10);
+		SDL_Delay(10);//adidier corregir tiempo entre frames
 	}
 }
 

@@ -6,7 +6,7 @@
 class GameStateManager
 {
 	private:
-		std::stack <GameState*> gamestates;
+		std::stack<GameState*> gamestates;
 		Platform* plat;
 	public:
 		GameStateManager();

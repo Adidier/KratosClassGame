@@ -6,7 +6,6 @@
 #include "Platform.h"
 void Game::Init()
 {
-	
 }
 
 void Game::Draw()
