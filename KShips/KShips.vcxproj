@@ -147,6 +147,7 @@
     <ClCompile Include="src\GameStateManager.cpp" />
     <ClCompile Include="src\Image.cpp" />
     <ClCompile Include="src\Platform.cpp" />
+    <ClCompile Include="src\RaptorShip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="src\GameStateManager.h" />
     <ClInclude Include="src\Image.h" />
     <ClInclude Include="src\Platform.h" />
+    <ClInclude Include="src\RaptorShip.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

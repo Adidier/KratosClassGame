@@ -21,7 +21,7 @@ bool Platform::Init(int width, int heigth)
 	//Initialization flag
 	bool success = true;
 	this->width = width;
-	this->heigth = heigth;
+	this->height = heigth;
 	//Initialize SDL
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
@@ -60,7 +60,15 @@ bool Platform::Init(int width, int heigth)
 	}
 	return success;
 }
+int Platform::GetHeight()
+{
+	return height;
+}
 
+int Platform::GetWidth()
+{
+	return width;
+}
 void Platform::Close()
 {
 	//Destroy window

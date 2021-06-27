@@ -8,7 +8,7 @@ class Platform
 {
 private:
 	int width;
-	int heigth;
+	int height;
 	std::string name;
 	SDL_Window* gWindow = NULL;
 	SDL_Renderer* gRenderer = NULL;
@@ -18,6 +18,8 @@ private:
 	Platform();
 public:	
 	static Platform* GetPtr();
+	int GetHeight();
+	int GetWidth();
 	bool Init(int width, int heigth);
 	void Close();
 	void RenderClear();
