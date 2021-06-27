@@ -12,6 +12,8 @@
 
 int main(int argc, char* args[])
 {
+	
+	//PRUEBA DEGIT
 	GameStateManager manager;
 	GameState* game = new Game();
 
