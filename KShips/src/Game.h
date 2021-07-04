@@ -1,10 +1,13 @@
 #pragma once
 #include "GameState.h"
 #include "RaptorShip.h"
+#include "PlayerShip.h"
+
 class Game : public GameState
 {
 private:
 	RaptorShip ship;
+	PlayerShip player;
 public:
 	Game() {};
 	void Init() override;

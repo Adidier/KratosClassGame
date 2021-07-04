@@ -12,8 +12,6 @@ RaptorShip::~RaptorShip()
 {
 }
 
-
-
 void RaptorShip::Init(int x, int y, int r, int h, int eng)
 {
 	harm = h;

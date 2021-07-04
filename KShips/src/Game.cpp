@@ -4,14 +4,17 @@
 #include "stdlib.h"
 #include "time.h"
 #include "Platform.h"
+
 void Game::Init()
 {
 	ship.Init(100, -50, 10, 10);
+	player.Init(100, 100, 5);
 }
 
 void Game::Draw()
 {
 	ship.Draw();
+	player.Draw();
 }
 
 void Game::Close()
