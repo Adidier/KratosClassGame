@@ -149,6 +149,7 @@
     <ClCompile Include="src\Platform.cpp" />
     <ClCompile Include="src\PlayerShip.cpp" />
     <ClCompile Include="src\RaptorShip.cpp" />
+    <ClCompile Include="src\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h" />
@@ -158,6 +159,7 @@
     <ClInclude Include="src\Platform.h" />
     <ClInclude Include="src\PlayerShip.h" />
     <ClInclude Include="src\RaptorShip.h" />
+    <ClInclude Include="src\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,13 +7,22 @@
 
 void Game::Init()
 {
-	ship.Init(100, -50, 10, 10);
-	player.Init(100, 100, 5);
+	for(int i=0;i<10;i++)
+	{
+		RaptorShip* thisShip = new RaptorShip();
+		thisShip->Init(100+(i*30), -50, 10, 10);
+		ships.push_back(thisShip);
+	}
+	
+	player.Init(200, 300, 5);
 }
 
 void Game::Draw()
 {
-	ship.Draw();
+	for (auto ship : ships)
+	{
+		ship->Draw();
+	}
 	player.Draw();
 }
 
@@ -30,7 +39,10 @@ bool Game::Impact(int x,int y, int w,int h, int x1, int y1, int w1, int h1)
 
 void Game::Update()
 {
-	ship.Update(0,0);
+	for (auto ship : ships)
+	{
+		ship->Update(0,0);
+	}
 }
 
 bool Game::Input(int key)
