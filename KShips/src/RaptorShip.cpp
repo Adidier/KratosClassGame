@@ -12,7 +12,7 @@ RaptorShip::~RaptorShip()
 {
 }
 
-void RaptorShip::Init(int x, int y, int r, int h, int eng)
+void RaptorShip::Init(int x, int y, unsigned int r, int h, int eng)
 {
 	harm = h;
 	radius = r;
@@ -51,4 +51,19 @@ void RaptorShip::Draw()
 	auto p = Platform::GetPtr();
 	p->RenderTexture(&image, positionx, positiony);
 
+}
+
+int RaptorShip::GetPositionX() 
+{
+	return positionx;
+}
+
+int RaptorShip::GetPositionY() 
+{
+	return positionx;
+}
+
+unsigned int RaptorShip::GetRadius() 
+{
+	return radius;
 }

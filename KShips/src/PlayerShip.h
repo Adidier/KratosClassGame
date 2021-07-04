@@ -1,8 +1,10 @@
 #pragma once
 #include "Image.h"
+#include "RaptorShip.h"
+#include <vector>
+
 class PlayerShip
 {
-
 private:
 	int positionX;
 	int positionY;
@@ -10,24 +12,22 @@ private:
 	int weapon;
 	int currentWeapon;
 	Image image;
-	int radius;
+	unsigned int radius;
 	int coolDown;
-
 
 
 public:
 	PlayerShip();
 	~PlayerShip();
 	
-	void Init(int x, int y, int r,int eng=100);
+	void Init(int x, int y,unsigned int r,int eng=100);
 	void Dash();
 	void Shoot();
 	void Move();
 	void Dead();
 	void Draw();
-	void Update();
-	void SetCurrentWeapon(int weapon);
-
+	void Update(std::vector<RaptorShip*> &ship);
+	void SetCurrentWeapon(int weapon);	
 };
 
 

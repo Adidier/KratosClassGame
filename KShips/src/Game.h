@@ -2,11 +2,12 @@
 #include "GameState.h"
 #include "RaptorShip.h"
 #include "PlayerShip.h"
+#include <vector>
 
 class Game : public GameState
 {
 private:
-	RaptorShip ship;
+	std::vector<RaptorShip*> ships;
 	PlayerShip player;
 public:
 	Game() {};
