@@ -14,7 +14,7 @@ void Game::Init()
 		ships.push_back(thisShip);
 	}
 	
-	player.Init(200, 300, 5);
+	player.Init(300, 300, 5);
 }
 
 void Game::Draw()
@@ -43,6 +43,7 @@ void Game::Update()
 	{
 		ship->Update(0,0);
 	}
+	player.Update(ships);
 }
 
 bool Game::Input(int key)

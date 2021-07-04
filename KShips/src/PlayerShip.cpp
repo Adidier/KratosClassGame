@@ -44,7 +44,7 @@ void PlayerShip::Dead()
 
 void PlayerShip::Draw()
 {
-	if (energy <= 0)
+	if (energy > 0)
 	{
 		Platform* ptr = Platform::GetPtr();
 		ptr->RenderTexture(&image, positionX, positionY);

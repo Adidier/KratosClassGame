@@ -60,7 +60,7 @@ int RaptorShip::GetPositionX()
 
 int RaptorShip::GetPositionY() 
 {
-	return positionx;
+	return positiony;
 }
 
 unsigned int RaptorShip::GetRadius() 
