@@ -143,6 +143,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="KShips.cpp" />
+    <ClCompile Include="src\EnemyBullet.cpp" />
+    <ClCompile Include="src\EnemyObject.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameStateManager.cpp" />
     <ClCompile Include="src\Image.cpp" />
@@ -152,6 +154,8 @@
     <ClCompile Include="src\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\EnemyBullet.h" />
+    <ClInclude Include="src\EnemyObject.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameState.h" />
     <ClInclude Include="src\GameStateManager.h" />

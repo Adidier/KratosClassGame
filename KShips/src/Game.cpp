@@ -23,6 +23,12 @@ void Game::Draw()
 	{
 		ship->Draw();
 	}
+
+	for (auto bullet : bulletsPool)
+	{
+		bullet->Draw();
+	}
+
 	player.Draw();
 }
 
@@ -33,8 +39,7 @@ void Game::Close()
 
 bool Game::Impact(int x,int y, int w,int h, int x1, int y1, int w1, int h1)
 {
-
-		return false;
+	return false;
 }
 
 void Game::Update()
@@ -43,6 +48,20 @@ void Game::Update()
 	{
 		ship->Update(0,0);
 	}
+
+	for (auto ship : ships)
+	{
+		if (rand() % 100 > 97)
+		{
+			bulletsPool.push_back(ship->Shoot());
+		}
+	}
+
+	for (auto bullet : bulletsPool)
+	{
+		bullet->Move();
+	}
+
 	player.Update(ships);
 }
 

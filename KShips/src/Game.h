@@ -2,13 +2,18 @@
 #include "GameState.h"
 #include "RaptorShip.h"
 #include "PlayerShip.h"
+#include "EnemyObject.h"
+
 #include <vector>
+#include <list>
 
 class Game : public GameState
 {
 private:
 	std::vector<RaptorShip*> ships;
 	PlayerShip player;
+	std::list<EnemyObject*> bulletsPool;
+	
 public:
 	Game() {};
 	void Init() override;

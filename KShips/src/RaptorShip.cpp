@@ -1,6 +1,6 @@
 #include "RaptorShip.h"
 #include "Platform.h"
-
+#include "EnemyBullet.h"
 
 
 RaptorShip::RaptorShip()
@@ -36,9 +36,12 @@ void RaptorShip::Move()
 		positionx++;
 	}
 }
-void RaptorShip::Shoot()
-{
 
+EnemyBullet* RaptorShip::Shoot()
+{
+	EnemyBullet* bullet = new EnemyBullet();
+	bullet->Init(positionx, positiony, 5, 1);
+	return bullet;
 }
 
 void RaptorShip::Update(int playerX, int playerY)
