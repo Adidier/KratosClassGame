@@ -11,5 +11,6 @@ void Image::LoadImage(std::string name)
 
 SDL_Texture* Image::GetTexture()
 {
+
 	return image;
 }

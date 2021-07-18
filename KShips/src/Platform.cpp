@@ -116,6 +116,9 @@ void Platform::RenderTexture(Image* tex, int x, int y)
 	SDL_RenderCopy(gRenderer, tex->GetTexture(), NULL, &dst);
 }
 
+
+
+
 /*
 C++ Lenguaje orientado a Objetos
 C++ es compatible con C

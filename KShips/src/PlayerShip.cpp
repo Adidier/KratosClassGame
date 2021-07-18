@@ -6,18 +6,18 @@ PlayerShip::PlayerShip()
 {
 
 }
+
 PlayerShip::~PlayerShip()
 {
 
 }
 
-void PlayerShip::Init(int x, int y,unsigned int r, int eng)
+void PlayerShip::Init(int x, int y,unsigned int r, int eng, int _speed)
 {
-
 	radius = r;
 	positionX = x;
 	positionY = y;
-	
+	speed = _speed;
 	energy = eng;
 	image.LoadImage("assets/playerShip.png");
 }
@@ -65,4 +65,28 @@ void PlayerShip::Update(std::vector<RaptorShip*> &ships)
 void PlayerShip::SetCurrentWeapon(int weapon)
 {
 
+}
+
+void PlayerShip::Input(int key)
+{
+	if (key == SDLK_w)
+	{
+		positionY -= speed;
+	}
+	else if (key == SDLK_s)
+	{
+		positionY += speed;
+	}
+	if (key == SDLK_d) 
+	{
+		positionX += speed;
+	}
+	else if (key == SDLK_a) 
+	{
+		positionX -= speed;
+	}
+	if (key == SDLK_SPACE) 
+	{
+		Shoot();
+	}
 }

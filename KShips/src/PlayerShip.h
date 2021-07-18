@@ -6,6 +6,15 @@
 class PlayerShip
 {
 private:
+	enum State
+	{
+		alive,
+		dead, 
+		invincible,
+		shoot
+	};
+
+private:
 	int positionX;
 	int positionY;
 	int energy; 
@@ -14,13 +23,14 @@ private:
 	Image image;
 	unsigned int radius;
 	int coolDown;
+	int speed;
 
 
 public:
 	PlayerShip();
 	~PlayerShip();
 	
-	void Init(int x, int y,unsigned int r,int eng=100);
+	void Init(int x, int y,unsigned int r,int eng=100, int speed=10);
 	void Dash();
 	void Shoot();
 	void Move();
@@ -28,6 +38,7 @@ public:
 	void Draw();
 	void Update(std::vector<RaptorShip*> &ship);
 	void SetCurrentWeapon(int weapon);	
+	void Input(int key);
 };
 
 

@@ -33,7 +33,7 @@ void GameStateManager::GameLoop()
 GameStateManager::GameStateManager()
 {
 	plat = Platform::GetPtr();
-	plat->Init(512,384);
+	plat->Init(512,700);
 }
 
 GameStateManager::~GameStateManager()

@@ -48,6 +48,6 @@ void Game::Update()
 
 bool Game::Input(int key)
 {
-
+	player.Input(key);
 	return false;
 }
