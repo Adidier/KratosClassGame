@@ -1,7 +1,7 @@
 #pragma once
 #include "Image.h"
 #include "RaptorShip.h"
-#include <vector>
+#include <list>
 
 class PlayerShip
 {
@@ -36,7 +36,7 @@ public:
 	void Move();
 	void Dead();
 	void Draw();
-	void Update(std::vector<RaptorShip*> &ship);
+	void Update(std::list<EnemyObject*> &ship);
 	void SetCurrentWeapon(int weapon);	
 	void Input(int key);
 };

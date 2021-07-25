@@ -51,7 +51,7 @@ void PlayerShip::Draw()
 	}
 }
 
-void PlayerShip::Update(std::vector<RaptorShip*> &ships)
+void PlayerShip::Update(std::list<EnemyObject*> &ships)
 {
 	for (auto ship : ships)
 	{

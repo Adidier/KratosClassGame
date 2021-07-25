@@ -21,9 +21,9 @@ void EnemyBullet::Move()
 	positiony+=3;
 }
 
-void EnemyBullet::Shoot()
+EnemyObject* EnemyBullet::Shoot()
 {
-
+	return nullptr;
 }
 
 void EnemyBullet::Update(int playerX, int playerY) 

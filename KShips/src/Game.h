@@ -10,9 +10,8 @@
 class Game : public GameState
 {
 private:
-	std::vector<RaptorShip*> ships;
 	PlayerShip player;
-	std::list<EnemyObject*> bulletsPool;
+	std::list<EnemyObject*> enemyList;
 	
 public:
 	Game() {};

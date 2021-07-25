@@ -37,7 +37,7 @@ void RaptorShip::Move()
 	}
 }
 
-EnemyBullet* RaptorShip::Shoot()
+EnemyObject* RaptorShip::Shoot()
 {
 	EnemyBullet* bullet = new EnemyBullet();
 	bullet->Init(positionx, positiony, 5, 1);

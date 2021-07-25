@@ -7,11 +7,11 @@
 
 void Game::Init()
 {
-	for(int i=0;i<10;i++)
+	for(int i=0; i < 10; i++)
 	{
 		RaptorShip* thisShip = new RaptorShip();
 		thisShip->Init(100+(i*30), -50, 10, 10);
-		ships.push_back(thisShip);
+		enemyList.push_back(thisShip);
 	}
 	
 	player.Init(300, 300, 5);
@@ -19,12 +19,7 @@ void Game::Init()
 
 void Game::Draw()
 {
-	for (auto ship : ships)
-	{
-		ship->Draw();
-	}
-
-	for (auto bullet : bulletsPool)
+	for (auto bullet : enemyList)
 	{
 		bullet->Draw();
 	}
@@ -44,25 +39,21 @@ bool Game::Impact(int x,int y, int w,int h, int x1, int y1, int w1, int h1)
 
 void Game::Update()
 {
-	for (auto ship : ships)
+	for (auto ship : enemyList)
 	{
-		ship->Update(0,0);
-	}
-
-	for (auto ship : ships)
-	{
-		if (rand() % 100 > 97)
+		RaptorShip* enemy = dynamic_cast<RaptorShip*>(ship);
+		if (enemy && rand() % 100 > 97)
 		{
-			bulletsPool.push_back(ship->Shoot());
+			enemyList.push_back(enemy->Shoot());
 		}
 	}
 
-	for (auto bullet : bulletsPool)
+	for (auto bullet : enemyList)
 	{
 		bullet->Move();
 	}
 
-	player.Update(ships);
+	player.Update(enemyList);
 }
 
 bool Game::Input(int key)
