@@ -2,6 +2,7 @@
 #include "Image.h"
 #include "RaptorShip.h"
 #include <list>
+#include "PlayerBullet.h"
 
 class PlayerShip
 {
@@ -24,7 +25,7 @@ private:
 	unsigned int radius;
 	int coolDown;
 	int speed;
-
+	std::list<PlayerBullet*> bullets;
 
 public:
 	PlayerShip();

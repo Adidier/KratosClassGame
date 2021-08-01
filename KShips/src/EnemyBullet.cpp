@@ -18,7 +18,7 @@ void EnemyBullet::Destroy()
 
 void EnemyBullet::Move()
 {
-	positiony+=3;
+	positiony+=1;
 }
 
 EnemyObject* EnemyBullet::Shoot()

@@ -29,7 +29,10 @@ void PlayerShip::Dash()
 
 void PlayerShip::Shoot()
 {
-
+	PlayerBullet* bullet = new PlayerBullet();
+	
+	bullet->Init(positionX, positionY, 5, 1);
+	bullets.push_back(bullet);
 }
 
 void PlayerShip::Move()
@@ -49,6 +52,10 @@ void PlayerShip::Draw()
 		Platform* ptr = Platform::GetPtr();
 		ptr->RenderTexture(&image, positionX, positionY);
 	}
+	for (auto bullet: bullets)
+	{
+		bullet->Draw();
+	}
 }
 
 void PlayerShip::Update(std::list<EnemyObject*> &ships)
@@ -59,6 +66,11 @@ void PlayerShip::Update(std::list<EnemyObject*> &ships)
 		{
 			energy = 0;
 		}
+	}
+
+	for (auto bullet : bullets)
+	{
+		bullet->Move();
 	}
 }
 

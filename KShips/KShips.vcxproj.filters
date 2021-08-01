@@ -42,10 +42,10 @@
     <ClCompile Include="src\EnemyObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\EnemyBullet.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerBullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EnemyBullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
