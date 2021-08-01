@@ -38,7 +38,7 @@ public:
 	void Draw();
 	void Update(std::list<EnemyObject*> &ship);
 	void SetCurrentWeapon(int weapon);	
-	void Input(int key);
+	void Input(const unsigned char*);
 };
 
 

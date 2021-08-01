@@ -67,26 +67,22 @@ void PlayerShip::SetCurrentWeapon(int weapon)
 
 }
 
-void PlayerShip::Input(int key)
+void PlayerShip::Input(const unsigned char* keys)
 {
-	if (key == SDLK_w)
-	{
+	if (keys[SDL_SCANCODE_W]) {
 		positionY -= speed;
 	}
-	else if (key == SDLK_s)
-	{
+	else if (keys[SDL_SCANCODE_S]) {
 		positionY += speed;
 	}
-	if (key == SDLK_d) 
-	{
-		positionX += speed;
-	}
-	else if (key == SDLK_a) 
-	{
+	if (keys[SDL_SCANCODE_A]){
 		positionX -= speed;
 	}
-	if (key == SDLK_SPACE) 
-	{
+	else if (keys[SDL_SCANCODE_D]) {
+		positionX += speed;
+	}
+
+	if (keys[SDL_SCANCODE_SPACE]) {
 		Shoot();
 	}
 }

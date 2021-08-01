@@ -14,7 +14,7 @@ private:
 	std::string name;
 	SDL_Window* gWindow = NULL;
 	SDL_Renderer* gRenderer = NULL;
-
+	const Uint8* keyboard_state_array;
 	static Platform* ptr;
 private:
 	Platform();
@@ -26,7 +26,7 @@ public:
 	void Close();
 	void RenderClear();
 	void RenderPresent();
-	void Input(GameState* obj, bool (GameState::* f)(int));
+	void Input(GameState* obj, bool (GameState::* f)(const Uint8*));
 	SDL_Renderer* GetRenderer();
 	void RenderTexture(Image* tex, int x, int y);
 	

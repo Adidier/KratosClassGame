@@ -90,16 +90,20 @@ void Platform::RenderPresent()
 	SDL_RenderPresent(gRenderer);
 }
 
-void Platform::Input(GameState* obj, bool (GameState::* f)(int))
+void Platform::Input(GameState* obj, bool (GameState::* f)(const Uint8*))
 {
+	keyboard_state_array = SDL_GetKeyboardState(NULL);
+	
 	SDL_Event e;
 	while (SDL_PollEvent(&e))
 	{
-		if (e.type == SDL_KEYDOWN)
-		{
-			(obj->*f)(e.key.keysym.sym); // https://www.geeksforgeeks.org/callbacks-in-c/
-		}
+		//
+		//if (e.type == SDL_KEYDOWN)
+		//{
+		//	(obj->*f)(keyboard_state_array); // https://www.geeksforgeeks.org/callbacks-in-c/
+		//}
 	}
+	(obj->*f)(keyboard_state_array);
 }
 
 SDL_Renderer* Platform::GetRenderer()

@@ -42,7 +42,7 @@ void Game::Update()
 	for (auto ship : enemyList)
 	{
 		RaptorShip* enemy = dynamic_cast<RaptorShip*>(ship);
-		if (enemy && rand() % 100 > 97)
+		if (enemy && (rand() % 1000) > 990)
 		{
 			enemyList.push_back(enemy->Shoot());
 		}
@@ -56,8 +56,8 @@ void Game::Update()
 	player.Update(enemyList);
 }
 
-bool Game::Input(int key)
+bool Game::Input(const Uint8 *keys)
 {
-	player.Input(key);
+	player.Input(keys);
 	return false;
 }

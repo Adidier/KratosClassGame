@@ -1,7 +1,8 @@
 #pragma once
+
 #include "EnemyObject.h"
 
-class PlayerBullet : public EnemyObject
+class PlayerBullet : public EnemyObject 
 {
 public:
 	 void Init(int x, int y, unsigned int r, int h, int eng = 100) override;
