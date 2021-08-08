@@ -57,6 +57,7 @@ void Game::Update()
 		bullet->Move();
 	}
 
+	std::vector<EnemyObject*> junkEnemy;
 	for (auto bullet : enemyList)
 	{
 		RaptorShip* enemy = dynamic_cast<RaptorShip*>(bullet);
@@ -68,9 +69,15 @@ void Game::Update()
 					playerBullet->GetPositionX(), playerBullet->GetPositionY(), playerBullet->GetRadius()))
 				{
 					enemy->Destroy();
+					junkEnemy.push_back(enemy);
 				}
 			}
 		}
+	}
+
+	for (auto enemy : junkEnemy)
+	{
+		enemyList.remove(enemy);
 	}
 
 	for (auto playerBullet : playersBullets)

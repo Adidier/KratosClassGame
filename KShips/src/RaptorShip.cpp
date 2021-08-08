@@ -10,6 +10,7 @@ RaptorShip::RaptorShip()
 
 RaptorShip::~RaptorShip()
 {
+
 }
 
 void RaptorShip::Init(int x, int y, unsigned int r, int h, int eng)

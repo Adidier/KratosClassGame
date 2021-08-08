@@ -13,12 +13,11 @@ void EnemyBullet::Init(int x, int y, unsigned int r, int h, int eng)
 
 void EnemyBullet::Destroy()
 {
-
 }
 
 void EnemyBullet::Move()
 {
-	positiony+=2;
+	positiony += 2;
 }
 
 EnemyObject* EnemyBullet::Shoot()
@@ -28,7 +27,6 @@ EnemyObject* EnemyBullet::Shoot()
 
 void EnemyBullet::Update(int playerX, int playerY) 
 {
-
 }
 
 void EnemyBullet::Draw()
