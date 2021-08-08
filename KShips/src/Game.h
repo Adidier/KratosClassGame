@@ -12,7 +12,7 @@ class Game : public GameState
 private:
 	PlayerShip player;
 	std::list<EnemyObject*> enemyList;
-	
+	std::list<PlayerBullet*> playersBullets;
 public:
 	Game() {};
 	void Init() override;

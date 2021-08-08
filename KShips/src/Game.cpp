@@ -4,17 +4,17 @@
 #include "stdlib.h"
 #include "time.h"
 #include "Platform.h"
+#include "Utils.h"
 
 void Game::Init()
 {
-	for(int i=0; i < 10; i++)
+	for(int i=0; i < 10; ++i)
 	{
 		RaptorShip* thisShip = new RaptorShip();
-		thisShip->Init(100+(i*30), -50, 10, 10);
+		thisShip->Init(100 + (i*30), -50, 10, 10);
 		enemyList.push_back(thisShip);
 	}
-	
-	player.Init(300, 300, 5);
+	player.Init(300, 300, 5, &playersBullets);
 }
 
 void Game::Draw()
@@ -24,12 +24,16 @@ void Game::Draw()
 		bullet->Draw();
 	}
 
+	for (auto playerBullet : playersBullets)
+	{
+		playerBullet->Draw();
+	}
+	
 	player.Draw();
 }
 
 void Game::Close()
 {
-
 }
 
 bool Game::Impact(int x,int y, int w,int h, int x1, int y1, int w1, int h1)
@@ -53,6 +57,26 @@ void Game::Update()
 		bullet->Move();
 	}
 
+	for (auto bullet : enemyList)
+	{
+		RaptorShip* enemy = dynamic_cast<RaptorShip*>(bullet);
+		if (enemy != nullptr)
+		{
+			for (auto playerBullet : playersBullets)
+			{
+				if (Utils::CheckCollision(bullet->GetPositionX(), bullet->GetPositionY(), bullet->GetRadius(),
+					playerBullet->GetPositionX(), playerBullet->GetPositionY(), playerBullet->GetRadius()))
+				{
+					enemy->Destroy();
+				}
+			}
+		}
+	}
+
+	for (auto playerBullet : playersBullets)
+	{
+		playerBullet->Move();
+	}
 	player.Update(enemyList);
 }
 

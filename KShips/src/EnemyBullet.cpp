@@ -8,7 +8,7 @@ void EnemyBullet::Init(int x, int y, unsigned int r, int h, int eng)
 	positionx = x;
 	positiony = y;
 	energy = eng;
-	image.LoadImage("assets/raptorShip.png");
+	image.LoadImage("assets/bulletEnemy.png");
 }
 
 void EnemyBullet::Destroy()
@@ -18,7 +18,7 @@ void EnemyBullet::Destroy()
 
 void EnemyBullet::Move()
 {
-	positiony+=1;
+	positiony+=2;
 }
 
 EnemyObject* EnemyBullet::Shoot()

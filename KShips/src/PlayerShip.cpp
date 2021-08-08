@@ -12,7 +12,7 @@ PlayerShip::~PlayerShip()
 
 }
 
-void PlayerShip::Init(int x, int y,unsigned int r, int eng, int _speed)
+void PlayerShip::Init(int x, int y,unsigned int r, std::list<PlayerBullet*>* bullets, int eng, int _speed)
 {
 	radius = r;
 	positionX = x;
@@ -20,29 +20,28 @@ void PlayerShip::Init(int x, int y,unsigned int r, int eng, int _speed)
 	speed = _speed;
 	energy = eng;
 	image.LoadImage("assets/playerShip.png");
+	this->bullets = bullets;
 }
 
 void PlayerShip::Dash()
 {
-
 }
 
 void PlayerShip::Shoot()
 {
 	PlayerBullet* bullet = new PlayerBullet();
-	
-	bullet->Init(positionX, positionY, 5, 1);
-	bullets.push_back(bullet);
+	int halfSize = image.GetWidth() >> 1;
+	int halfSizeBullet = bullet->GetWidth() >> 1;
+	bullet->Init(positionX + halfSize - halfSizeBullet, positionY, 5, 1);
+	bullets->push_back(bullet);
 }
 
 void PlayerShip::Move()
 {
-
 }
 
 void PlayerShip::Dead()
 {
-
 }
 
 void PlayerShip::Draw()
@@ -51,10 +50,6 @@ void PlayerShip::Draw()
 	{
 		Platform* ptr = Platform::GetPtr();
 		ptr->RenderTexture(&image, positionX, positionY);
-	}
-	for (auto bullet: bullets)
-	{
-		bullet->Draw();
 	}
 }
 
@@ -67,16 +62,10 @@ void PlayerShip::Update(std::list<EnemyObject*> &ships)
 			energy = 0;
 		}
 	}
-
-	for (auto bullet : bullets)
-	{
-		bullet->Move();
-	}
 }
 
 void PlayerShip::SetCurrentWeapon(int weapon)
 {
-
 }
 
 void PlayerShip::Input(const unsigned char* keys)

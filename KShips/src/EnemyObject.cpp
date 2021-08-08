@@ -14,3 +14,13 @@ unsigned int EnemyObject::GetRadius()
 {
 	return radius;
 }
+
+int EnemyObject::GetWidth()
+{
+	return image.GetWidth();
+}
+
+int EnemyObject::GetHeight()
+{
+	return image.GetHeight();
+}

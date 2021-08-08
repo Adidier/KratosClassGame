@@ -25,13 +25,12 @@ private:
 	unsigned int radius;
 	int coolDown;
 	int speed;
-	std::list<PlayerBullet*> bullets;
+	std::list<PlayerBullet*> *bullets;
 
 public:
 	PlayerShip();
-	~PlayerShip();
-	
-	void Init(int x, int y,unsigned int r,int eng=100, int speed=10);
+	~PlayerShip();	
+	void Init(int x, int y,unsigned int r, std::list<PlayerBullet*>* bullets, int eng=100, int speed=10);
 	void Dash();
 	void Shoot();
 	void Move();

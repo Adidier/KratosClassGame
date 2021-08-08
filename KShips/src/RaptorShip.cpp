@@ -24,11 +24,14 @@ void RaptorShip::Init(int x, int y, unsigned int r, int h, int eng)
 
 void RaptorShip::Destroy()
 {
-
+	energy = 0;
 }
 
 void RaptorShip::Move()
 {
+	if (energy == 0)
+		return;
+
 	positiony++;
 	auto p = Platform::GetPtr();
 	if (positiony >= (p->GetHeight() / 2))

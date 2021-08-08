@@ -5,14 +5,12 @@ class EnemyObject
 {
 protected:
 	const float speed = 10;
-
 	int positionx;
 	int positiony;
 	unsigned int radius;
 	Image image;
 	int harm;
 	int energy;
-
 
 public:
 	virtual void Init(int x, int y, unsigned int r, int h, int eng = 100) = 0;
@@ -24,4 +22,6 @@ public:
 	int GetPositionX();
 	int GetPositionY();
 	unsigned int GetRadius();
+	int GetWidth();
+	int GetHeight();
 };
