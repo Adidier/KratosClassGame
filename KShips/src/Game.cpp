@@ -57,6 +57,34 @@ void Game::Update()
 		bullet->Move();
 	}
 
+	RemoveEnemys();
+
+	for (auto playerBullet : playersBullets)
+	{
+		playerBullet->Move();
+	}
+	
+	
+	std::vector<PlayerBullet*> junkBullets;
+
+	for (auto playerBullet : playersBullets)
+	{
+		if (playerBullet->GetPositionY() < 0)
+		{
+			junkBullets.push_back(playerBullet);
+		}
+	}	
+
+	for (auto bullet : junkBullets)
+	{
+		playersBullets.remove(bullet);
+	}
+
+	player.Update(enemyList);
+}
+
+void Game::RemoveEnemys()
+{
 	std::vector<EnemyObject*> junkEnemy;
 	for (auto bullet : enemyList)
 	{
@@ -79,12 +107,6 @@ void Game::Update()
 	{
 		enemyList.remove(enemy);
 	}
-
-	for (auto playerBullet : playersBullets)
-	{
-		playerBullet->Move();
-	}
-	player.Update(enemyList);
 }
 
 bool Game::Input(const Uint8 *keys)

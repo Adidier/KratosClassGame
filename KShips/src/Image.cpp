@@ -7,7 +7,7 @@ void Image::LoadImage(std::string name)
 	SDL_Surface* loadSurface = IMG_Load(name.c_str());
 	image = SDL_CreateTextureFromSurface(Platform::GetPtr()->GetRenderer(), loadSurface);
 	SDL_QueryTexture(image, NULL, NULL, &size.x, &size.y);
-
+	SDL_free(loadSurface);
 	//Adidier liberar memoria de loadSurface
 }
 
