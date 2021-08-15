@@ -3,6 +3,7 @@
 #include "RaptorShip.h"
 #include "PlayerShip.h"
 #include "EnemyObject.h"
+#include "Scroll.h"
 
 #include <vector>
 #include <list>
@@ -13,6 +14,7 @@ private:
 	PlayerShip player;
 	std::list<EnemyObject*> enemyList;
 	std::list<PlayerBullet*> playersBullets;
+	Scroll scroll;
 public:
 	Game() {};
 	void Init() override;

@@ -29,6 +29,7 @@ public:
 	void Input(GameState* obj, bool (GameState::* f)(const Uint8*));
 	SDL_Renderer* GetRenderer();
 	void RenderTexture(Image* tex, int x, int y);
+	void RenderTexture(Image* tex, int x, int y, int w, int h);
 	
 };
 

@@ -5,7 +5,7 @@
 
 class Image
 {
-private:
+protected:
 	SDL_Texture* image;
 	std::string name;
 	SDL_Point size;

@@ -15,10 +15,12 @@ void Game::Init()
 		enemyList.push_back(thisShip);
 	}
 	player.Init(300, 300, 5, &playersBullets);
+	scroll.Init("assets/background.png", 1);
 }
 
 void Game::Draw()
 {
+	scroll.Draw();
 	for (auto bullet : enemyList)
 	{
 		bullet->Draw();
@@ -43,6 +45,7 @@ bool Game::Impact(int x,int y, int w,int h, int x1, int y1, int w1, int h1)
 
 void Game::Update()
 {
+	scroll.Update(1);
 	for (auto ship : enemyList)
 	{
 		RaptorShip* enemy = dynamic_cast<RaptorShip*>(ship);

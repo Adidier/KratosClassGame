@@ -36,7 +36,7 @@ bool Platform::Init(int width, int heigth)
 			printf("Warning: Linear texture filtering not enabled!");
 		}
 		//Create window
-		gWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, heigth, SDL_WINDOW_SHOWN);
+		gWindow = SDL_CreateWindow("Kratos", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, heigth, SDL_WINDOW_SHOWN);
 		if (gWindow == NULL)
 		{
 			printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
@@ -120,6 +120,14 @@ void Platform::RenderTexture(Image* tex, int x, int y)
 	SDL_RenderCopy(gRenderer, tex->GetTexture(), NULL, &dst);
 }
 
+void Platform::RenderTexture(Image* tex, int x, int y, int w, int h)
+{
+	SDL_Rect dst;
+	dst.x = x;
+	dst.y = y;
+	SDL_QueryTexture(tex->GetTexture(), NULL, NULL, &dst.w, &dst.h);
+	SDL_RenderCopy(gRenderer, tex->GetTexture(), NULL, &dst);
+}
 
 
 
