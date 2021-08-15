@@ -120,6 +120,24 @@ void Platform::RenderTexture(Image* tex, int x, int y)
 	SDL_RenderCopy(gRenderer, tex->GetTexture(), NULL, &dst);
 }
 
+void Platform::RenderTexture(Image* tex, int x, int y, int w, int h)
+{
+	SDL_Rect src;
+	src.x = x;
+	src.y = y;
+	src.w = w;
+	src.h = h;
+
+	SDL_Rect dst;
+	dst.x = 0;
+	dst.y = 0;
+	dst.w = w;
+	dst.h = h;
+
+	//SDL_QueryTexture(tex->GetTexture(), NULL, NULL, &dst.w, &dst.h);
+	SDL_RenderCopy(gRenderer, tex->GetTexture(), &src, &dst);
+}
+
 
 
 

@@ -15,10 +15,12 @@ void Game::Init()
 		enemyList.push_back(thisShip);
 	}
 	player.Init(300, 300, 5, &playersBullets);
+	scroll.Init("./assets/background.png", 1);
 }
 
 void Game::Draw()
 {
+	scroll.Draw();
 	for (auto bullet : enemyList)
 	{
 		bullet->Draw();
@@ -30,6 +32,7 @@ void Game::Draw()
 	}
 	
 	player.Draw();
+	
 }
 
 void Game::Close()
@@ -81,6 +84,7 @@ void Game::Update()
 	}
 
 	player.Update(enemyList);
+	scroll.Move(1);
 }
 
 void Game::RemoveEnemys()
